@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Delete</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <main class="page-shell">
+        <section class="hero">
+            <div>
+                <h1>Confirm Deletion</h1>
+                <p class="subtitle">This action cannot be undone.</p>
+            </div>
+        </section>
+
+        <section class="form-shell confirm-delete-box">
+            <div class="confirm-message">
+                <p><strong>Delete this message?</strong></p>
+                <p class="message-preview"><%= message %></p>
+                <p class="text-muted">From: <strong><%= from %></strong> to <strong><%= to %></strong></p>
+            </div>
+
+            <div class="form-actions">
+                <form method="POST" action="/chats/<%= id %>?_method=DELETE" style="display:inline;">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn-danger">Confirm Delete</button>
+                </form>
+                <a href="/chats" class="btn-secondary">Cancel</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

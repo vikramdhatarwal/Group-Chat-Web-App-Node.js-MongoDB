@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Chats</title>
+    <link rel="stylesheet" href="/styles.css">
+    
+</head>
+<body>
+    <main class="page-shell">
+        <section class="hero">
+            <div>
+                <h1>All Chats</h1>
+                <p class="subtitle">A simple list of saved messages.</p>
+            </div>
+            <div class="hero-actions">
+                <a class="add-chat-btn" href="/chats/new">Add Chat</a>
+                <div class="hero-badge"><%= allchats.length %> messages</div>
+            </div>
+        </section>
+        <section class="chat-grid">
+            <% allchats.forEach(chat => { %>
+                <article class="chat-card">
+                    <div class="chat-card__top">
+                        <span class="avatar"><%= chat.from.charAt(0) %></span>
+                        <div>
+                            <h2><%= chat.from %></h2>
+                            <p>To <%= chat.to %></p>
+                        </div>
+                    </div>
+
+                    <p class="message"><%= chat.message %></p>
+
+                    <div class="meta">
+                        <span class="meta-label">Created</span>
+                        <span><%= chat.created_at.toLocaleString() %></span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="/chats/<%= chat._id %>/edit" class="btn-secondary">Edit</a>
+                        <a href="/chats/<%= chat._id %>/confirm-delete" class="btn-danger" style="text-decoration: none;">Delete</a>
+                    </div>
+                </article>
+                
+            <% }) %>
+        </section>
+    </main>
+</body>
+</html>
