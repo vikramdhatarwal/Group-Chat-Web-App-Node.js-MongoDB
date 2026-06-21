@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="nav-brand" href="/">ChatApp</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/chats">All Chats</a>
+            <a class="nav-cta" href="/chats/new">New Chat</a>
+        </div>
+    </nav>
+
+    <main class="page-shell home-shell">
+        <section class="home-hero">
+            <div class="home-copy">
+                <p class="eyebrow">MongoDB chat manager</p>
+                <h1>Keep your saved chats organized.</h1>
+                <p class="subtitle home-subtitle">Create, review, edit, and delete simple chat messages from one clean workspace.</p>
+
+                <div class="home-actions">
+                    <a class="add-chat-btn" href="/chats">View Chats</a>
+                    <a class="btn-secondary" href="/chats/new">Create Chat</a>
+                </div>
+            </div>
+
+            <div class="home-preview" aria-label="Chat preview">
+                <div class="preview-header">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="preview-message preview-message--sent">
+                    <strong>You</strong>
+                    <p>Hey, can you save this message?</p>
+                </div>
+                <div class="preview-message">
+                    <strong>Chat App</strong>
+                    <p>Done. It is ready whenever you need it.</p>
+                </div>
+                <div class="preview-meta">Stored securely with MongoDB</div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
