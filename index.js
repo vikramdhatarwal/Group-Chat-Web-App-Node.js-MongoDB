@@ -4,6 +4,10 @@ const mongoose=require('mongoose');
 const path=require('path');
 const Chat=require('./models/chat.js');
 const methodOverride=require('method-override');
+const dotenv=require('dotenv');
+dotenv.config();
+
+
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname,'public')));
 app.use(express.urlencoded({extended:true}));
@@ -14,7 +18,7 @@ app.set('views',path.join(__dirname,'views'));
 app.set('view engine','ejs');
 main().catch(err=>console.log(err));
 async function main(){
-    await mongoose.connect('mongodb://localhost:27017/whatsapp');
+    await mongoose.connect(process.env.DATABASE_URL);
     console.log("Connected to MongoDB");
 }
 
